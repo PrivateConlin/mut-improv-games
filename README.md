@@ -20,15 +20,17 @@ mutgames-web/
 ├── index.html          # Main page with game listing and search
 ├── game.html           # Individual game details page
 ├── css/
-│   ├── style.css       # Custom styles
-│   └── bootstrap.min.css # Bootstrap 5 (CDN recommended)
+│   ├── style.css       # Custom styles and theming
+│   └── bootstrap.min.css # Bootstrap 5 (local copy)
 ├── js/
 │   ├── app.js          # Main application initialization
 │   ├── data.js         # Data loading and processing
 │   ├── search.js       # Search and filter functionality
-│   └── game-details.js # Game details page logic
+│   ├── game-details.js # Game details page logic
+│   └── bootstrap.bundle.min.js # Bootstrap 5 JavaScript (local copy)
 ├── data/
 │   └── mutgames.json   # Game database (copied from parent directory)
+├── .gitignore          # Git ignore rules
 └── README.md           # This file
 ```
 
@@ -181,6 +183,45 @@ This is a simple static site. To contribute:
 2. Test locally by opening `index.html` in a browser
 3. Commit and push changes
 4. Deploy via your hosting platform
+
+## Third-Party Libraries & Licensing
+
+This project uses the following third-party libraries:
+
+### Bootstrap 5
+- **Version**: 5.3.0
+- **License**: MIT License
+- **Source**: Downloaded locally from [jsDelivr CDN](https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/)
+- **Local Files**:
+  - `css/bootstrap.min.css` (227KB)
+  - `js/bootstrap.bundle.min.js` (80KB)
+
+**Licensing Details**: Bootstrap is released under the MIT License, which allows free use, modification, and distribution. The MIT License is permissive and compatible with most open-source and commercial projects.
+
+### Why Local Files Instead of CDN?
+
+While CDN links are convenient for development, this project uses local copies for:
+
+1. **Content Control**: You know exactly what's in the files
+2. **Offline Development**: Works without internet connection
+3. **Deployment Reliability**: No dependency on external services
+4. **Version Pinning**: Exact version control in your repository
+5. **Performance**: Potentially faster loading from same domain
+
+### Updating Bootstrap
+
+To update to a newer version of Bootstrap:
+
+```bash
+# Download latest CSS
+curl -o css/bootstrap.min.css https://cdn.jsdelivr.net/npm/bootstrap@5.3.x/dist/css/bootstrap.min.css
+
+# Download latest JS
+curl -o js/bootstrap.bundle.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.x/dist/js/bootstrap.bundle.min.js
+
+# Test the application
+# Commit changes
+```
 
 ## License
 
