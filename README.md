@@ -19,6 +19,7 @@ A responsive web application for browsing and searching the MUT Improv Games dat
 mutgames-web/
 ├── index.html          # Main page with game listing and search
 ├── game.html           # Individual game details page
+├── test.html           # Test suite for functionality and accessibility
 ├── css/
 │   ├── style.css       # Custom styles and theming
 │   └── bootstrap.min.css # Bootstrap 5 (local copy)
@@ -113,12 +114,45 @@ For quick testing, you can simply:
 
 - **`index.html`**: Main application page with search and game grid
 - **`game.html`**: Individual game detail pages (loaded dynamically)
+- **`test.html`**: Test suite for functionality and accessibility
 - **`css/style.css`**: Custom styles and responsive design
 - **`js/app.js`**: Main application initialization and error handling
 - **`js/data.js`**: Game data loading, processing, and utility functions
 - **`js/search.js`**: Search and filter functionality
 - **`js/game-details.js`**: Game detail page logic and YouTube embedding
 - **`data/mutgames.json`**: Game database (232+ games)
+
+## Testing
+
+The application includes a comprehensive test suite to verify functionality and accessibility.
+
+### Running Tests
+
+1. **Open the test suite**: Navigate to `test.html` in your browser
+2. **Run all tests**: Click the "Run All Tests" button
+3. **Run accessibility tests**: Click the "Accessibility Tests" button
+4. **Review results**: Tests are organized by category with pass/fail indicators
+
+### Test Categories
+
+- **Data Loading Tests**: Verify game data loads correctly and has expected structure
+- **Search Functionality Tests**: Test text search, case sensitivity, and result accuracy
+- **Filter Functionality Tests**: Test category, difficulty, and combined filtering
+- **UI Component Tests**: Verify interface elements are present and functional
+- **Accessibility Tests**: Check for proper labels, alt text, and semantic structure
+
+### Manual Testing Checklist
+
+- [ ] Search functionality works with various terms
+- [ ] Filters update results correctly
+- [ ] Game cards display properly on mobile/desktop
+- [ ] Game detail pages load and show complete information
+- [ ] YouTube videos embed correctly
+- [ ] Dark/light mode toggle works
+- [ ] Keyboard navigation functions
+- [ ] Screen reader compatibility (use browser dev tools)
+- [ ] Color contrast meets WCAG AA standards
+- [ ] Responsive design works on different screen sizes
 
 ## Deployment
 
