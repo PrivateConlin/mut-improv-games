@@ -118,9 +118,9 @@ function updateResultsInfo(count) {
 
     const total = window.GameData.allGames.length;
     if (count === total) {
-        resultsInfo.textContent = `Showing all ${total} games`;
+        resultsInfo.textContent = `Found ${total} improv games ready to explore`;
     } else {
-        resultsInfo.textContent = `Showing ${count} of ${total} games`;
+        resultsInfo.textContent = `Found ${count} of ${total} games matching your search`;
     }
 }
 
