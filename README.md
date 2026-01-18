@@ -8,8 +8,10 @@ A responsive web application for browsing and searching the MUT Improv Games dat
 - **Filters**: Filter by category, difficulty level, and other attributes
 - **Game Details**: Click any game to view comprehensive information including setup, rules, tips, examples, and video links
 - **YouTube Integration**: Embedded YouTube videos for games that have video examples
+- **Dark/Light Mode**: Modern theme toggle with Apple-inspired design
 - **Responsive Design**: Mobile-friendly interface using Bootstrap 5
 - **Fast & Static**: No backend required, all logic runs client-side
+- **Modern UI**: Clean, minimalist design with smooth animations and transitions
 
 ## Project Structure
 
@@ -32,10 +34,89 @@ mutgames-web/
 
 ## Setup & Development
 
+### Prerequisites
+- Any modern web browser (Chrome 70+, Firefox 65+, Safari 12+, Edge 79+)
+- No additional software or dependencies required
+
+### Local Development Setup
+
 1. **Clone or copy the project structure**
-2. **Copy the game data**: Ensure `mutgames.json` is in the `data/` directory
-3. **Open in browser**: Simply open `index.html` in any modern web browser
-4. **No build process required**: This is a static site with no dependencies
+   ```bash
+   # If using git
+   git clone <your-repo-url>
+   cd mutgames-web
+
+   # Or manually copy the mutgames-web directory
+   ```
+
+2. **Verify data file**: Ensure `mutgames.json` exists in the `data/` directory
+   ```bash
+   ls -la data/
+   # Should show: mutgames.json
+   ```
+
+3. **Start local development server** (recommended for proper CORS and relative path handling):
+   ```bash
+   # Using Python (if available)
+   python3 -m http.server 8000
+
+   # Or using Node.js (if available)
+   npx serve .
+
+   # Or using PHP (if available)
+   php -S localhost:8000
+
+   # Or using Ruby (if available)
+   ruby -run -e httpd . -p 8000
+   ```
+
+   **To stop the server**: Press `Ctrl+C` in the terminal where it's running
+
+4. **Open in browser**:
+   - If using a local server: `http://localhost:8000`
+   - Or directly: Double-click `index.html` in your file explorer
+
+5. **Verify functionality**:
+   - Page should load with "Loading games..." then display all 232+ games
+   - Search bar should work for real-time filtering
+   - Filter dropdowns should update results
+   - Click any game card to view details
+   - Games with YouTube links should show embedded videos
+
+### Alternative: Direct File Opening
+
+For quick testing, you can simply:
+1. Navigate to the `mutgames-web` directory
+2. Double-click `index.html` to open in your default browser
+
+**Note**: Some browsers may block local file access for security. Using a local server is recommended for full functionality.
+
+### Development Workflow
+
+1. **Make changes** to HTML, CSS, or JavaScript files
+2. **Test locally** using one of the methods above
+3. **Check browser console** for any JavaScript errors
+4. **Test responsiveness** by resizing browser window
+5. **Verify search/filter** functionality works as expected
+
+### Debugging Tips
+
+- **Open Developer Tools**: Press F12 or right-click → "Inspect Element"
+- **Check Console**: Look for JavaScript errors in the Console tab
+- **Network Tab**: Verify `mutgames.json` loads successfully
+- **Responsive Testing**: Use browser dev tools device emulation
+- **Search Testing**: Try various search terms and filter combinations
+
+### File Structure Explanation
+
+- **`index.html`**: Main application page with search and game grid
+- **`game.html`**: Individual game detail pages (loaded dynamically)
+- **`css/style.css`**: Custom styles and responsive design
+- **`js/app.js`**: Main application initialization and error handling
+- **`js/data.js`**: Game data loading, processing, and utility functions
+- **`js/search.js`**: Search and filter functionality
+- **`js/game-details.js`**: Game detail page logic and YouTube embedding
+- **`data/mutgames.json`**: Game database (232+ games)
 
 ## Deployment
 
